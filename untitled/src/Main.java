@@ -14,15 +14,16 @@ public class Main {
         String action;
         String choice;
 
+        System.out.println("Write action (buy, fill, take, remaining, exit):");
 
         do{
 
-            System.out.println("Write action (buy, fill, take, remaining, exit):");
+
 
             action = scanner.nextLine();
 
 
-            if(action.equals("remainig")){
+            if(action.equals("remaining")){
 
 
                 System.out.println("The coffee machine has:");
@@ -31,7 +32,10 @@ public class Main {
                 System.out.println(beans +" of coffee beans");
                 System.out.println(cups +" of disposable cups");
                 System.out.println(money +" of money");
-                break;
+
+                System.out.println("Write action (buy, fill, take, remaining, exit):");
+
+                continue;
 
 
             }else if(action.equals("buy")){
@@ -54,6 +58,7 @@ public class Main {
                         }else if (cups < 1) {
                             System.out.println("Sorry, not enough cups!");
                         }
+                        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu ");
                         continue;
                     }else if(choice.equals("2")){
                         if ((water >= 350 && milk >= 75) && (beans >= 20 && cups >=1)){
@@ -76,33 +81,38 @@ public class Main {
                         beans -= 20;
                         cups -= 1;
                         money +=7;
+                        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu ");
                         continue;
-                    }else if(choice.equals("3")){
-                        if ((water >= 200 && milk >= 100) && (beans >= 12 && cups >=1)){
+                    }else if(choice.equals("3")) {
+                        if ((water >= 200 && milk >= 100) && (beans >= 12 && cups >= 1)) {
                             System.out.println("I have enough resources, making you a coffee!");
                             water -= 250;
                             beans -= 16;
                             cups -= 1;
-                            money +=4;
-                        }else if (water < 200){
+                            money += 4;
+                        } else if (water < 200) {
                             System.out.println("Sorry, not enough water!");
-                        }else if (milk < 100){
+                        } else if (milk < 100) {
                             System.out.println("Sorry, not enough water!");
-                        }else if (beans < 12) {
+                        } else if (beans < 12) {
                             System.out.println("Sorry, not enough beans!");
-                        }else if (cups < 1) {
+                        } else if (cups < 1) {
                             System.out.println("Sorry, not enough cups!");
                         }
                         water -= 200;
                         milk -= 100;
                         beans -= 12;
                         cups -= 1;
-                        money +=6;
+                        money += 6;
+                        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu ");
                         continue;
+                    }else if(choice.equals("back")){
+                        System.out.println("Write action (buy, fill, take, remaining, exit):");
+                        break;
                     }
 
 
-                }while(choice != "back");
+                }while(scanner.hasNext());
 
             }else if(action.equals("fill")){
                 System.out.println("Write how many ml of water do you want to add:");
@@ -116,17 +126,24 @@ public class Main {
 
                 System.out.println("Write how many disposable cups of coffee do you want to add: ");
                 cups += scanner.nextInt();
+
+                System.out.println("Write action (buy, fill, take, remaining, exit):");
+
                 continue;
             }else if(action.equals("take")){
                 System.out.println("I gave you $"+money);
                 money -= money;
+
+                System.out.println("Write action (buy, fill, take, remaining, exit):");
+
                 continue;
+            }else if(action.equals("exit")) {
+                System.out.println("Good Bye");
+                scanner.close();
             }
 
 
-
-
-        }while(action != "exit");
+        }while(scanner.hasNext());
 
         scanner.close();
     }
