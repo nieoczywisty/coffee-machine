@@ -215,6 +215,7 @@ public class Main {
                 System.out.println("Good Bye️");
                 System.out.println("   \uD83D\uDE00");
                 scanner.close();
+                System.exit(0);
             }
 
 
