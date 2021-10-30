@@ -11,4 +11,4 @@ Implements refillable interface which adds ingredients to storage from user inpu
 This was my first "bigger" problem to solve.<br>
 -concepts of classes, objects, intefaces, inheritance.<br>
 -reading input from user and performing actions based of it.<br>
--basics of git<br>
+-basics of git.<br>
