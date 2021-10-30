@@ -12,4 +12,5 @@ This was my first "bigger" problem to solve.<br>
 -concepts of classes, objects, intefaces, inheritance.<br>
 -reading input from user and performing actions based of it.<br>
 -basics of git.<br>
+# Screenshot
 ![Test Image 1](coffee-machine-image.png)
